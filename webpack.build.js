@@ -1,5 +1,5 @@
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 const path = require('path')
 
@@ -26,9 +26,8 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        loader: ['css-loader', 'postcss-loader']
-      }),
+      use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      
     }]
   },
 
@@ -45,9 +44,6 @@ module.exports = {
           require('postcss-cssnext')({browsers: ['chrome >= 35', 'ios >= 7']})
         ]
       }
-    }),
-    new ExtractTextPlugin({
-      filename: 'react-actionsheet.min.css'
     })
   ]
 }
