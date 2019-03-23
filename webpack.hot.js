@@ -28,7 +28,7 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loaders: ['style-loader', 'css-loader', 'postcss-loader'],
+      loaders: ['style-loader', 'css-loader'],
     }]
   },
   mode: 'development',
@@ -37,14 +37,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './example/index.html',
       hash: true
-    }),
-    new webpack.LoaderOptionsPlugin({
-      test: /\.css$/,
-      options: {
-        postcss: [
-          require('postcss-cssnext')({browsers: ['chrome >= 35', 'ios >= 7']})
-        ]
-      }
     })
   ]
 }
