@@ -23,6 +23,11 @@
   },
   "homepage": "https://github.com/newraina/react-actionsheet#readme",
   "devDependencies": {
+    "@babel/core": "^7",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "babel-loader": "^8",
     "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
     "react": "^15.3.2",
@@ -33,11 +38,7 @@
     "webpack": "^4",
     "webpack-dev-middleware": "^3",
     "webpack-hot-middleware": "^2",
-    "webpack-html-plugin": "^0.1.1",
-    "@babel/core": "^7",
-    "@babel/preset-env":"^7",
-    "@babel/preset-react":"^7",
-    "babel-loader": "^8"
+    "webpack-html-plugin": "^0.1.1"
   },
   "dependencies": {
     "css-loader": "^0.25.0",
