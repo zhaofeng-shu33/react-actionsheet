@@ -1,5 +1,4 @@
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 const path = require('path')
 
@@ -13,7 +12,7 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
-
+  mode: 'production',
   externals: {
     'react-dom': 'ReactDOM',
     react: 'React'
@@ -26,7 +25,7 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      use: ['style-loader', 'css-loader']
       
     }]
   },
@@ -35,14 +34,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      test: /\.css$/,
-      options: {
-        postcss: [
-          require('postcss-cssnext')({browsers: ['chrome >= 35', 'ios >= 7']})
-        ]
       }
     })
   ]
