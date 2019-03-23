@@ -31,7 +31,7 @@ module.exports = {
       loaders: ['style-loader', 'css-loader', 'postcss-loader'],
     }]
   },
-
+  mode: 'development',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
